@@ -1,0 +1,42 @@
+<meta charset = "UTF-8">
+
+<script>
+
+	function pulaLinha() {
+		document.write("<br><br>");
+	};
+	
+	function tracaLinha() {
+		document.write("<hr><br>");
+	};
+
+	function mostraNaTela(frase) {
+		document.write(frase);
+		pulaLinha();
+	};
+
+	/* Utilizando o Operador de Igualdade "==" - o erro ocorre porque ele converte os tipos das variáveis para com	pará-los.
+	   Utilizando o Operador de Igualdade Restrita "===" - ele compara os valores e os tipos de variáveis. */ 	
+	/* Define uma matriz com os valores a serem apresentados em tela */ 	
+	var matrizNomeVariavel  = ["numeroUm", "stringUm", "numeroTrinta", "stringTrinta", "numeroDez", "stringDez"]
+	var matrizValorVariavel = [1,"1",30,"30",10,"10"]
+
+	for(lin=0 ; lin<6 ; lin = lin+2){
+		mostraNaTela("Comparação entre os valores de " + matrizNomeVariavel[lin] + " = " + matrizValorVariavel[lin] + " e de " + matrizNomeVariavel[lin+1] + " = " + matrizValorVariavel[lin+1] + "<br>");  
+						
+		if (matrizValorVariavel[lin] == matrizValorVariavel[lin+1]) {
+		  mostraNaTela("Quando utilizamos o operador de igualdade  ==  ele converte as variáveis para compará-los, por esse motivo com as variáveis " + matrizNomeVariavel[lin] + " = " + matrizValorVariavel[lin] + " e " + matrizNomeVariavel[(lin+1)] + " = " + matrizValorVariavel[(lin+1)] + " o sistema considera que eles tem o mesmo valor, mesmo sendo de tipos diferentes - gerando um erro de programação.");
+		} else {
+		  mostraNaTela("As variáveis " + matrizNomeVariavel[lin] + " = " + matrizValorVariavel[lin] + " e " + matrizNomeVariavel[lin+1] + " = " + matrizValorVariavel[lin+1] + " não tem o mesmo valor.");
+		}
+		
+		if (matrizValorVariavel[lin] === matrizValorVariavel[lin+1]) {
+		  mostraNaTela("As variáveis " + matrizNomeVariavel[lin] + " = " + matrizValorVariavel[lin] + " tem o mesmo valor, mas tipos diferentes.");
+		} else {
+		  mostraNaTela("Quanto utilizamos o operador de igualdade restrita  ===  ele compara os valores e os tipos de variáveis, por isso as variáveis " + matrizNomeVariavel[lin] + " = " + matrizValorVariavel[lin] + " e " + matrizNomeVariavel[lin+1] + " = " + matrizValorVariavel[lin+1] + " não tem o mesmo valor - sendo correta a resposta.");
+		}
+			
+	tracaLinha();
+	}
+
+</script>
